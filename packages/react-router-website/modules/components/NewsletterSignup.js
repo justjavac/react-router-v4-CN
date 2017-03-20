@@ -112,7 +112,7 @@ export default class NewsletterSignup extends Component {
             >
       {/*Sign up to receive updates about React Router, our workshops,
               online courses, and more:*/}
-              As a companion to the documentation, we'll be launching a free course on React Router v4 within the next few weeks.
+              在未来几周内，我们将为 React Router v4 推出一个免费课程，作为文档内容的补充。
             </Block>
             <form onSubmit={this.handleSubmit}>
               {submitted ? (
@@ -142,7 +142,7 @@ export default class NewsletterSignup extends Component {
                   /> */}
                   <Button type="submit">
                     {/*Subscribe*/}
-                    More Information
+                    更多信息
                   </Button>
                 </Flex>
               )}
