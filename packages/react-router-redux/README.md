@@ -4,9 +4,9 @@
 
 > **Keep your state in sync with your router** :sparkles:
 
-This is beta software, it needs:
+这是一个测试版软件, 它需要:
 
-1. A working example
+1. 一个工作实例
 2. Some people to try it out and find bugs
 3. A strategy for working with the devtools
    - (issue describing a different approach to what we've seen previously coming soon)

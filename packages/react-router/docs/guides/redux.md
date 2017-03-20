@@ -1,8 +1,8 @@
-# Redux Integration
+# Redux 集成
 
-Redux is an important part of the React ecosystem. We want to make the integration of React Router and Redux as seamless as possible for people wanting to use both.
+Redux 是 React 生态系统里一个重要的部分, 我们希望使 React Router 与 Redux 尽可能满足大家可以无缝的去使用两者.
 
-As of version 4 of React Router, the React Router Redux package is a part of the Router project. Please refer to it for integration.
+在 React Router v4 中, React Router Redux 包是 Router 项目中的一个部分, 请参考它进行集成
 
 [React Router Redux](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux)
 
