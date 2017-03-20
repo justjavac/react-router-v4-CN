@@ -40,7 +40,6 @@ const Button = ({ to, small, ...props }) => (
     position="relative"
     props={{ to }}
     textAlign="center"
-    textTransform="uppercase"
     top="0"
     userSelect="none"
     whiteSpace="nowrap"
@@ -85,15 +84,13 @@ const Banner = () => (
         <Block flex="1">
           <Block lineHeight="1">
             <Block
-              textTransform="uppercase"
               fontSize={isSmallScreen ? '80%' : '120%'}
               fontWeight="bold"
             >
-              Learn once, Route anywhere
+              一次学习，随处路由
             </Block>
             <Block
               component="h2"
-              textTransform="uppercase"
               fontSize={isSmallScreen ? '200%' : '350%'}
               fontWeight="bold"
             >
@@ -105,12 +102,10 @@ const Banner = () => (
             margin={`${isSmallScreen ? 20 : 20}px 0`}
             fontSize={isSmallScreen ? '80%' : null}
           >
-            Components are the heart of React's powerful, declarative
-            programming model. React Router is a collection of <b>navigational
-            components</b> that compose declaratively with your application. Whether
-            you want to have <b>bookmarkable URLs</b> for your web app or a composable
-            way to navigate in <b>React Native</b>, React Router works wherever React
-            is rendering--so take your pick!
+          通过声明式编程模型定义组件，是 React 最强大的核心功能。
+          React Router 可以为您的应用已声明式的方式定义<b>导航组件</b>最强大的核心功能。
+          无论是 Web App 的<b>浏览器书签 URLs</b>，还是 <b>React Native</b> 的导航功能，
+          只要是可以使用 React 的地方，就可以使用 React Router -- 因此，做出你的选择！
           </Block>
 
           <Row>

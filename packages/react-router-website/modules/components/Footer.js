@@ -34,8 +34,7 @@ const Footer = () => (
       fontSize="80%"
     >
       <Block component="p">
-        React Router is built and maintained by <ReactTraining/> and
-        hundreds of <Contributors/>.
+        React Router 由 <ReactTraining/> 和一些协作者 <Contributors/> 共同构建
       </Block>
       <Block
         marginTop="20px"
@@ -44,7 +43,7 @@ const Footer = () => (
         &copy; {year} React Training
       </Block>
       <Block color={LIGHT_GRAY}>
-        Code examples and documentation <CC/>
+        示例代码和文档基于 <CC/> 协议发布
       </Block>
     </Block>
   </Block>
