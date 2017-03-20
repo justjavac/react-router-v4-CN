@@ -12,16 +12,15 @@ cd demo-app
 
 ## 安装
 
-React Router DOM is [published to npm](https://npm.im/react-router-dom) so you can install it with either `npm` or [`yarn`](https://yarnpkg.com). Create React App uses yarn, so that's what we'll use.
+React Router DOM 已经 [发布到 npm](https://npm.im/react-router-dom) 因此你可以使用 `npm` 或者 [`yarn`](https://yarnpkg.com)。使用 yarn 创建 React App 可以使用如下方式：
 
 ```sh
 yarn add react-router-dom
-# or, if you're not using yarn
+# 或者，不使用 yarn
 npm install react-router-dom
 ```
 
-Now you can copy/paste any of the examples into `src/App.js`. Here's the
-basic one:
+现在你可以复制任意的示例代码，并粘贴到 `src/App.js`。如下：
 
 ```jsx
 import React from 'react'
