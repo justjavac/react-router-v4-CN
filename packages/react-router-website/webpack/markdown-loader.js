@@ -40,12 +40,18 @@ const highlight = (str, lang) => {
   }
 }
 
+const sidebarTitle = (title) => {
+  const titleParts = title.split('|')
+  const titleCN = titleParts[1] || titleParts[0]
+  return titleCN.trim()
+}
+
 const extractHeaders = ($, level, type) => (
   $(level).map((n, e) => {
     const $e = $(e)
     const text = $e.text()
     return {
-      text: text,
+      text: sidebarTitle(text),
       slug: type === 'api'
         ? slugify(text)
         : slugify(text).toLowerCase()
