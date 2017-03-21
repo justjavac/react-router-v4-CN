@@ -1,6 +1,6 @@
 # &lt;BrowserRouter>
 
-A [`<Router>`](../../../react-router/docs/api/Router.md) that uses the HTML5 history API (`pushState`, `replaceState` and the `popstate` event) to keep your UI in sync with the URL.
+[`<Router>`](../../../react-router/docs/api/Router.md) 使用 HTML5 提供的 history API (`pushState`, `replaceState` 和 `popstate` 事件) 来保持 UI 和 URL 的同步。
 
 ```js
 import { BrowserRouter } from 'react-router-dom'
@@ -17,19 +17,20 @@ import { BrowserRouter } from 'react-router-dom'
 
 ## basename: string
 
-The base URL for all locations. If your app is served from a sub-directory on your server, you'll want to set this to the sub-directory. A properly formatted basename should have a leading slash, but no trailing slash.
+当前位置的基准 URL。如果你的页面部署在服务器的二级（子）目录，你需要将 `basename` 设置到此子目录。
+正确的 URL 格式是前面有一个前导斜杠，但不能有尾部斜杠。
 
 ```js
 <BrowserRouter basename="/calendar"/>
-<Link to="/today"/> // renders <a href="/calendar/today">
+<Link to="/today"/> // 渲染为 <a href="/calendar/today">
 ```
 
 ## getUserConfirmation: func
 
-A function to use to confirm navigation. Defaults to using [`window.confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm).
+当导航需要确认时执行的函数。默认使用 [`window.confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)。
 
 ```js
-// this is the default behavior
+// 使用默认的确认函数
 const getConfirmation = (message, callback) => {
   const allowTransition = window.confirm(message)
   callback(allowTransition)
@@ -40,7 +41,8 @@ const getConfirmation = (message, callback) => {
 
 ## forceRefresh: bool
 
-If `true` the router will use full page refreshes on page navigation. You probably only want this in [browsers that don't support the HTML5 history API](http://caniuse.com/#feat=history).
+当设置为 `true` 时，在导航的过程中整个页面将会刷新。
+只有当浏览器不支持 [HTML5 的 history API](http://caniuse.com/#feat=history) 时，才设置为 `true`。
 
 ```js
 const supportsHistory = 'pushState' in window.history
@@ -49,7 +51,7 @@ const supportsHistory = 'pushState' in window.history
 
 ## keyLength: number
 
-The length of `location.key`. Defaults to 6.
+`location.key` 的长度。默认是 6。
 
 ```js
 <BrowserRouter keyLength={12}/>
@@ -57,4 +59,4 @@ The length of `location.key`. Defaults to 6.
 
 ## children: node
 
-A [single child element](https://facebook.github.io/react/docs/react-api.html#react.children.only) to render.
+渲染[单一子组件（元素）](https://facebook.github.io/react/docs/react-api.html#react.children.only)。
