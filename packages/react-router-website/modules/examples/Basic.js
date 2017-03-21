@@ -9,9 +9,9 @@ const BasicExample = () => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
+        <li><Link to="/">首页</Link></li>
+        <li><Link to="/about">关于</Link></li>
+        <li><Link to="/topics">主题列表</Link></li>
       </ul>
 
       <hr/>
@@ -25,40 +25,40 @@ const BasicExample = () => (
 
 const Home = () => (
   <div>
-    <h2>Home</h2>
+    <h2>首页</h2>
   </div>
 )
 
 const About = () => (
   <div>
-    <h2>About</h2>
+    <h2>关于</h2>
   </div>
 )
 
 const Topics = ({ match }) => (
   <div>
-    <h2>Topics</h2>
+    <h2>主题列表</h2>
     <ul>
       <li>
         <Link to={`${match.url}/rendering`}>
-          Rendering with React
+          使用 React 渲染
         </Link>
       </li>
       <li>
         <Link to={`${match.url}/components`}>
-          Components
+          组件
         </Link>
       </li>
       <li>
         <Link to={`${match.url}/props-v-state`}>
-          Props v. State
+          属性 v. 状态
         </Link>
       </li>
     </ul>
 
     <Route path={`${match.url}/:topicId`} component={Topic}/>
     <Route exact path={match.url} render={() => (
-      <h3>Please select a topic.</h3>
+      <h3>请选择一个主题。</h3>
     )}/>
   </div>
 )
