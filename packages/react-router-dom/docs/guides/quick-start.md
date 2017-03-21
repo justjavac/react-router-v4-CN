@@ -1,4 +1,4 @@
-# 快速开始
+# Quick Start
 
 一种简单的快速创建 React web 项目的方式是使用 [Create React App][crapp] 工具，此工具由 Facebook 开发并维护。
 
