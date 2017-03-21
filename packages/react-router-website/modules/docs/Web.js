@@ -29,62 +29,62 @@ export default {
   ],
 
   examples: [
-    { label: 'Basic',
+    { label: '基本使用',
       slug: 'basic',
       load: require('bundle?lazy!babel!../examples/Basic'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/Basic.js')
     },
-    { label: 'URL Parameters',
+    { label: 'URL参数',
       slug: 'url-params',
       load: require('bundle?lazy!babel!../examples/Params'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/Params.js')
     },
-    { label: 'Redirects (Auth)',
+    { label: '认证',
       slug: 'auth-workflow',
       load: require('bundle?lazy!babel!../examples/Auth'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/Auth.js')
     },
-    { label: 'Custom Link',
+    { label: '自定义链接',
       slug: 'custom-link',
       load: require('bundle?lazy!babel!../examples/CustomLink'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/CustomLink.js')
     },
-    { label: 'Preventing Transitions',
+    { label: '阻止导航',
       slug: 'preventing-transitions',
       load: require('bundle?lazy!babel!../examples/PreventingTransitions'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/PreventingTransitions.js')
     },
-    { label: 'No Match (404)',
+    { label: '未匹配 (404)',
       slug: 'no-match',
       load: require('bundle?lazy!babel!../examples/NoMatch'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/NoMatch.js')
     },
-    { label: 'Recursive Paths',
+    { label: '路径递归',
       slug: 'recursive-paths',
       load: require('bundle?lazy!babel!../examples/Recursive'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/Recursive.js')
     },
-    { label: 'Sidebar',
+    { label: '边栏',
       slug: 'sidebar',
       load: require('bundle?lazy!babel!../examples/Sidebar'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/Sidebar.js')
     },
-    { label: 'Animated Transitions',
+    { label: '过渡动画',
       slug: 'animated-transitions',
       load: require('bundle?lazy!babel!../examples/Animation'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/Animation.js')
     },
-    { label: 'Ambiguous Matches',
+    { label: '模糊匹配',
       slug: 'ambiguous-matches',
       load: require('bundle?lazy!babel!../examples/Ambiguous'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/Ambiguous.js')
     },
-    { label: 'Route Config',
+    { label: '路由配置',
       slug: 'route-config',
       load: require('bundle?lazy!babel!../examples/RouteConfig'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/RouteConfig.js')
     },
-    { label: 'Modal Gallery',
+    { label: '模态画廊',
       slug: 'modal-gallery',
       load: require('bundle?lazy!babel!../examples/ModalGallery'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/ModalGallery.js')
