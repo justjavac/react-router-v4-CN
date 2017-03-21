@@ -22,7 +22,7 @@
 
 [View the docs here](https://reacttraining.com/react-router)
 
-[点击此处查看中文文档](https://reacttraining.cn/)
+[点击此处查看中文文档](http://reacttraining.cn/)
 
 [3.x 文档](https://github.com/ReactTraining/react-router/blob/v3/docs)
 
