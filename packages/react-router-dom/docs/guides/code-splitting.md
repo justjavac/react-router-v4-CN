@@ -1,4 +1,5 @@
-# Code Splitting
+# Code Splitting | 代码拆分
+
 Code Spliting 是一个非常酷的特性，它能让我们用户无需完整下载整个 app 即可使用。你可以将他认为是增量加载我们的应用。尽管有一些其他工具也能实现相关特性，但在这个教程里我们使用 [Webpack][Webpack] 和 [bundle loader][bundle-loader] 。
 
 你可以通过 `<Bundle>` 来实现网站的 code splitting，值得注意的是，router 并没有为实现 code splitting 而做额外的工作。当你“进入一个路由”仅仅意味着“你渲染了一个组件”，所以我们能在用户导航到某个路由时动态引入这个组件。你可以通过这种方式在应用的任何地方使用 code splitting。
