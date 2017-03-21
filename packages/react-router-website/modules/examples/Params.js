@@ -8,12 +8,12 @@ import {
 const ParamsExample = () => (
   <Router>
     <div>
-      <h2>Accounts</h2>
+      <h2>账号</h2>
       <ul>
-        <li><Link to="/netflix">Netflix</Link></li>
-        <li><Link to="/zillow-group">Zillow Group</Link></li>
-        <li><Link to="/yahoo">Yahoo</Link></li>
-        <li><Link to="/modus-create">Modus Create</Link></li>
+        <li><Link to="/react-router">React Router</Link></li>
+        <li><Link to="/leoashin">LeoAshin</Link></li>
+        <li><Link to="/justjavac">justjavac</Link></li>
+        <li><Link to="/reacttraining">React Training</Link></li>
       </ul>
 
       <Route path="/:id" component={Child}/>
