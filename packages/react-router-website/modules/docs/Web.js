@@ -64,7 +64,7 @@ export default {
       load: require('bundle?lazy!babel!../examples/Recursive'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/Recursive.js')
     },
-    { label: '边栏',
+    { label: '侧边栏',
       slug: 'sidebar',
       load: require('bundle?lazy!babel!../examples/Sidebar'),
       loadSource: require('bundle?lazy!!prismjs?lang=jsx!../examples/Sidebar.js')
