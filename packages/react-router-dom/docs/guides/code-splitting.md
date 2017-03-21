@@ -1,4 +1,5 @@
-# Code Splitting
+# Code Splitting | 代码拆分
+
 Code Spliting 是一个非常酷的特性，它能让我们用户无需完整下载整个 app 即可使用。你可以将他认为是增量加载我们的应用。尽管有一些其他工具也能实现相关特性，但在这个教程里我们使用 [Webpack][Webpack] 和 [bundle loader][bundle-loader] 。
 
 Here's the way the website you're using right now does code splitting: `<Bundle>`. What's most notable is that the router actually has nothing to do with this. When you're "at a route" that simply means "you're rendering a component". So we can make a component that loads dynamic imports as the user navigates to it. This approach works for any part of your app.
