@@ -1,4 +1,4 @@
-# Quick Start 快速开始
+# Quick Start | 快速开始
 
 一种简单的快速创建 React web 项目的方式是使用 [Create React App][crapp] 工具，此工具由 Facebook 开发并维护。
 
@@ -10,7 +10,8 @@ create-react-app demo-app
 cd demo-app
 ```
 
-## Installation 安装
+## Installation | 安装
+
 
 React Router DOM 已经 [发布到 npm](https://npm.im/react-router-dom) 因此你可以使用 `npm` 或者 [`yarn`](https://yarnpkg.com)。使用 yarn 创建 React App 可以使用如下方式：
 
