@@ -1,5 +1,6 @@
 # Server Rendering | 服务器端渲染
 
+在服务端渲染对比客户端有许多不同, 因为服务器端是无状态的.  这个想法源自于我们包装app时, 曾用无状态的 [`<StaticRouter>`][StaticRouter] 取代了 [`<BrowserRouter>`][BrowserRouter], 我们通过来自于服务端的请求url使得路由能够匹配上. 我们接下来会讨论 `context` 属性
 Rendering on the server is a bit different since it's all stateless. The basic idea is that we wrap the app in a stateless [`<StaticRouter>`][StaticRouter] instead of a [`<BrowserRouter>`][BrowserRouter]. We pass in the requested url from the server so the routes can match and a `context` prop we'll discuss next.
 
 
@@ -18,6 +19,7 @@ Rendering on the server is a bit different since it's all stateless. The basic i
 </StaticRouter>
 ```
 
+当你在客户端渲染 [`<Redirect>`][Redirect], 浏览器历史会改变状态使我们能获得新的视图, 在一个静态的服务环境下, 我们不能够改变app的状态. 作为替代, 我们使用 `context` 属性去找到渲染的出来的结果是什么. 如果我们找到了 `context.url`, 那么我们知道这个app重定向了. 这能让我们向服务端发送一个重定向请求
 When you render a [`<Redirect>`][Redirect] on the client, the browser history changes state and we get the new screen. In a static server environment we can't change the app state. Instead, we use the `context` prop to find out what the result of rendering was. If we find a `context.url`, then we know the app redirected. This allows us to send a proper redirect from the server.
 
 ```js
@@ -41,6 +43,7 @@ if (context.url) {
 
 ## Adding app specific context information
 
+路由只能添加 `context.url`.  但是你可能需要重定向时发送一个 30x 的响应. 或许你在某些特别的UI渲染后需要发送一个404响应, 又甚者没有认证的情况下发送401. context属性是属于你的, 你可以改变它. 而这里我们给出了分辨301与302重定向的方法
 The router only ever adds `context.url`. But you may want some redirects to be 301 and others 302. Or maybe you'd like to send a 404 response if some specific branch of UI is rendered, or a 401 if they aren't authorized. The context prop is yours, so you can mutate it. Here's a way to distinguish between 301 and 302 redirects:
 
 ```js
@@ -87,7 +90,7 @@ if (context.url) {
 }
 ```
 
-## 404, 401, or any other status
+## 404, 401, 或者其他状态
 
 We can do the same thing as above. Create a component that adds some context and render it anywhere in the app to get a different status code.
 
@@ -122,6 +125,7 @@ const NotFound = () => (
 
 ## Putting it all together
 
+这并不是一个真正的app, 但是它会展示所有你需要放在一起的组件
 This isn't a real app, but it shows all of the general pieces you'll
 need to put it all together.
 
