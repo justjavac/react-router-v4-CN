@@ -9,7 +9,7 @@
 </h3>
 
 <p align="center">
-  Declarative routing for <a href="https://facebook.github.io/react">React</a>
+  用于 <a href="https://facebook.github.io/react">React</a> 的声明式路由组件
 </p>
 
 <p align="center">
@@ -34,7 +34,7 @@
 
 |  包名 | 版本 | 文档 | 描述 |
 |---------|---------|------|-------------|
-| [`react-router`](/packages/react-router) | [![npm](https://img.shields.io/npm/v/react-router.svg?style=flat-square)](https://www.npmjs.com/package/react-router) | [![](https://img.shields.io/badge/API%20Docs-markdown-green.svg?style=flat-square)](/packages/react-router/docs) | React Router 核心 |
+| [`react-router`](/packages/react-router) | [![npm](https://img.shields.io/npm/v/react-router.svg?style=flat-square)](https://www.npmjs.com/package/react-router) | [![](https://img.shields.io/badge/API%20Docs-markdown-green.svg?style=flat-square)](/packages/react-router/docs) | React Router 核心组件 |
 | [`react-router-dom`](/packages/react-router-dom) | [![npm](https://img.shields.io/npm/v/react-router-dom.svg?style=flat-square)](https://www.npmjs.com/package/react-router-dom) | [![](https://img.shields.io/badge/API%20Docs-markdown-green.svg?style=flat-square)](/packages/react-router-dom/docs) | 用于 DOM 绑定的 React Router |
 | [`react-router-native`](/packages/react-router-native) | [![npm](https://img.shields.io/npm/v/react-router-native.svg?style=flat-square)](https://www.npmjs.com/package/react-router-native) | [![](https://img.shields.io/badge/API%20Docs-markdown-green.svg?style=flat-square)](/packages/react-router-native/docs) | 用于 [React Native](https://facebook.github.io/react-native/) 的 React Router|
 | [`react-router-redux`](/packages/react-router-redux) | [![npm](https://img.shields.io/badge/npm-5.0.0alpha.2-orange.svg?style=flat-square)](https://www.npmjs.com/package/react-router-redux) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/react-router-redux/#readme) |  React Router 和 Redux 的集成 |
