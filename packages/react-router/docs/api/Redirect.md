@@ -1,6 +1,6 @@
 # &lt;Redirect>
 
-Rendering a `<Redirect>` will navigate to a new location. The new location will override the current location in the history stack, like server-side redirects (HTTP 3xx) do.
+渲染`<Redirect>` 的时候将会导航到一个新的地址（location）。这个新的地址（location）将会覆盖在访问历史记录里面的原地址，就像服务端的重定向（HTTP 3XX）一样。
 
 ```js
 import { Route, Redirect } from 'react-router'
@@ -16,7 +16,7 @@ import { Route, Redirect } from 'react-router'
 
 ## to: string
 
-The URL to redirect to.
+重定向目标URL。
 
 ```js
 <Redirect to="/somewhere/else"/>
@@ -24,7 +24,7 @@ The URL to redirect to.
 
 ## to: object
 
-A location to redirect to.
+重定向目标地址(location)。
 
 ```js
 <Redirect to={{
@@ -36,7 +36,10 @@ A location to redirect to.
 
 ## push: bool
 
-When `true`, redirecting will push a new entry onto the history instead of replacing the current one.
+当设置为 `true` 时，重定向（redirecting）将会把新地址加入访问历史记录里面，而不是替换掉目前的地址。
+
+
+
 
 ```js
 <Redirect push to="/somewhere/else"/>
@@ -44,8 +47,7 @@ When `true`, redirecting will push a new entry onto the history instead of repla
 
 ## from: string
 
-A pathname to redirect from. This can be used to match a location when rendering a `<Redirect>` inside of a `<Switch>`.
-
+需要被重定向的路径（pathname）。当渲染一个包含在[`<Switch>`](./Switch.md)里面的`<Redirect>`的时候，这可以用作匹配一个地址（location）。
 ```js
 <Switch>
   <Redirect from='/old-path' to='/new-path'/>
