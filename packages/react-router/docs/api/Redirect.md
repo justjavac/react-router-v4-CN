@@ -36,7 +36,7 @@ import { Route, Redirect } from 'react-router'
 
 ## push: bool
 
-当设置为 `true` 时，重定向（redirecting）将会把新地址加入访问历史记录里面。
+当设置为 `true` 时，重定向（redirecting）将会把新地址加入访问历史记录里面，而不是替换掉目前的地址。
 
 
 
