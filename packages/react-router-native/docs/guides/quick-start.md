@@ -1,20 +1,20 @@
-# Quick Start
+# Quick Start | 快速开始
 
-If this is your first time building a React Native app, we recommend you check out the official ["Getting Started"](https://facebook.github.io/react-native/docs/getting-started.html) guide.
+如果这是你首次开发 React Native 应用，我们推荐你阅读 facebook 的官方指南：["Getting Started"](https://facebook.github.io/react-native/docs/getting-started.html)。
 
-## Installation
+## Installation | 安装
 
-React Router Native is published to [npm](https://npm.im/react-router-native). You can install it with either `npm` or [`yarn`](https://yarnpkg.com).
+React Router Native 已经 [发布到 npm](https://npm.im/react-router-native) 因此你可以使用 `npm` 或者 [`yarn`](https://yarnpkg.com)。
 
 ```sh
 npm install react-router-native
-# or
+# 或
 yarn add react-router-native
 ```
 
-Once you've initialized a new React Native project, you can copy/paste any of the examples into your `index.ios.js` or `index.android.js` files to play around with them.
+当你创建完 React Native 项目后，你可以复制任意的示例代码，并粘贴到 `index.ios.js` 和 `index.android.js`。
 
-Here's the basic example:
+代码如下：
 
 ```jsx
 import React from 'react'
@@ -29,13 +29,13 @@ import { NativeRouter, Route, Link } from 'react-router-native'
 
 const Home = () => (
   <Text style={styles.header}>
-    Home
+    首页
   </Text>
 )
 
 const About = () => (
   <Text style={styles.header}>
-    About
+    关于
   </Text>
 )
 
@@ -47,7 +47,7 @@ const Topic = ({ match }) => (
 
 const Topics = ({ match }) => (
   <View>
-    <Text style={styles.header}>Topics</Text>
+    <Text style={styles.header}>主题列表</Text>
     <View>
       <Link
         to={`${match.url}/rendering`}
@@ -71,7 +71,7 @@ const Topics = ({ match }) => (
 
     <Route path={`${match.url}/:topicId`} component={Topic}/>
     <Route exact path={match.url} render={() => (
-      <Text style={styles.topic}>Please select a topic.</Text>
+      <Text style={styles.topic}>选择一个主题。</Text>
     )} />
   </View>
 )
@@ -84,19 +84,19 @@ const nativeRouterExamples = () => (
           to="/"
           underlayColor='#f0f4f7'
           style={styles.navItem}>
-            <Text>Home</Text>
+            <Text>首页</Text>
         </Link>
         <Link
           to="/about"
           underlayColor='#f0f4f7'
           style={styles.navItem}>
-            <Text>About</Text>
+            <Text>关于</Text>
         </Link>
         <Link
           to="/topics"
           underlayColor='#f0f4f7'
           style={styles.navItem} >
-            <Text>Topics</Text>
+            <Text>主题列表</Text>
         </Link>
       </View>
 
