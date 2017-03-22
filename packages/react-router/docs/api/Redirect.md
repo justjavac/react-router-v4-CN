@@ -16,7 +16,7 @@ import { Route, Redirect } from 'react-router'
 
 ## to: string
 
-需要重定向到的URL。
+重定向目标地址。
 
 ```js
 <Redirect to="/somewhere/else"/>
@@ -24,7 +24,7 @@ import { Route, Redirect } from 'react-router'
 
 ## to: object
 
-需要重定向到的地址（location）。
+重定向目标地址(location)。
 
 ```js
 <Redirect to={{
