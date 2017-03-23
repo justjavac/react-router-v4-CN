@@ -1,13 +1,13 @@
 # &lt;Prompt>
 
-Used to prompt the user before navigating away from a page. When your application enters a state that should prevent the user from navigating away (like a form is half-filled out), render a `<Prompt>`.
+用于在用户导航离开当前页面的时候作出提示。当你的应用程序进入了一个应该避免用户导航离开的状态（例如填写表格到一半），你应该使用`<Prompt>`。
 
 ```js
 import { Prompt } from 'react-router'
 
 <Prompt
   when={formIsHalfFilledOut}
-  message="Are you sure you want to leave?"
+  message="你确定要离开吗？"
 />
 ```
 
@@ -15,24 +15,31 @@ import { Prompt } from 'react-router'
 
 The message to prompt the user with when they try to navigate away.
 
+当用户尝试导航离开时，提示用户的消息。
+
 ```js
-<Prompt message="Are you sure you want to leave?"/>
+<Prompt message="你确定要离开吗？"/>
 ```
 
 ## message: func
 
-Will be called with the next `location` and `action` the user is attempting to navigate to. Return a string to show a prompt to the user or `true` to allow the transition.
+函数被调用的时候，会带上用户正试图导航到的 `location`（地址） 和 `action`。
+
+函数会返回一个字符串用作向用户提示，或者返回`true`用作允许过渡。
 
 ```js
 <Prompt message={location => (
-  `Are you sure you want to go to ${location.pathname}?`
+  `你确定你要前往 ${location.pathname} 吗?`
 )}/>
 ```
 
 ## when: bool
 
-Instead of conditionally rendering a `<Prompt>` behind a guard, you can always render it but pass `when={true}` or `when={false}` to prevent or allow navigation accordingly.
+你可以随时渲染`<Prompt>`，而不是有条件地在警戒后面渲染它。
+
+- 当`when={true}` 时，禁止导航
+- 当`when={false}` 时，允许导航
 
 ```js
-<Prompt when={formIsHalfFilledOut} message="Are you sure?"/>
+<Prompt when={formIsHalfFilledOut} message="确定吗？"/>
 ```
