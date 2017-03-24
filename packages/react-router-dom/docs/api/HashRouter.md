@@ -1,8 +1,11 @@
 # &lt;HashRouter>
 
-A [`<Router>`](../../../react-router/docs/api/Router.md) that uses the hash portion of the URL (i.e. `window.location.hash`) to keep your UI in sync with the URL.
+`HashRouter` 是一种特定的 [`<Router>`](../../../react-router/docs/api/Router.md)， `HashRouter` 使用 URL 的 hash (例如：`window.location.hash`) 来保持 UI 和 URL 的同步。
 
-**IMPORTANT NOTE:** Hash history does not support `location.key` or `location.state`. In previous versions we attempted to shim the behavior but there were edge-cases we couldn't solve. Any code or plugin that needs this behavior won't work. As this technique is only intended to support legacy browsers, we encourage you to configure your server to work with `<BrowserHistory>` instead.
+**注意：** 使用 hash 的方式记录导航历史不支持 `location.key` 和 `location.state`。
+在以前的版本中，我们为这种行为提供了 shim，但是仍有一些问题我们无法解决。
+任何依赖此行为的代码或插件都将无法正常使用。
+由于该技术仅用于支持传统的浏览器，因此在用于浏览器时可以使用 `<BrowserHistory>` 代替。
 
 ```js
 import { HashRouter } from 'react-router-dom'
@@ -14,7 +17,7 @@ import { HashRouter } from 'react-router-dom'
 
 ## basename: string
 
-The base URL for all locations. A properly formatted basename should have a leading slash, but no trailing slash.
+当前位置的基准 URL。正确的 URL 格式是前面有一个前导斜杠，但不能有尾部斜杠。
 
 ```js
 <HashRouter basename="/calendar"/>
@@ -23,10 +26,10 @@ The base URL for all locations. A properly formatted basename should have a lead
 
 ## getUserConfirmation: func
 
-A function to use to confirm navigation. Defaults to using [`window.confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm).
+当导航需要确认时执行的函数。默认使用 [`window.confirm`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)。
 
 ```js
-// this is the default behavior
+// 使用默认的确认函数
 const getConfirmation = (message, callback) => {
   const allowTransition = window.confirm(message)
   callback(allowTransition)
@@ -37,14 +40,14 @@ const getConfirmation = (message, callback) => {
 
 ## hashType: string
 
-The type of encoding to use for `window.location.hash`. Available values are:
+`window.location.hash` 使用的 hash 类型。有如下几种：
 
-- `"slash"` - Creates hashes like `#/` and `#/sunshine/lollipops`
-- `"noslash"` - Creates hashes like `#` and `#sunshine/lollipops`
-- `"hashbang"` - Creates ["ajax crawlable"](https://developers.google.com/webmasters/ajax-crawling/docs/learn-more) (deprecated by Google) hashes like `#!/` and `#!/sunshine/lollipops`
+- `"slash"` - 后面跟一个斜杠，例如 `#/` 和 `#/sunshine/lollipops`
+- `"noslash"` - 后面没有斜杠，例如 `#` 和 `#sunshine/lollipops`
+- `"hashbang"` - Google 风格的 ["ajax crawlable"](https://developers.google.com/webmasters/ajax-crawling/docs/learn-more)，例如 `#!/` 和 `#!/sunshine/lollipops`
 
-Defaults to `"slash"`.
+默认为 `"slash"`。
 
 ## children: node
 
-A [single child element](https://facebook.github.io/react/docs/react-api.html#react.children.only) to render.
+渲染[单一子组件（元素）](https://facebook.github.io/react/docs/react-api.html#react.children.only)。
