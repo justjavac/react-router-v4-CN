@@ -1,6 +1,7 @@
 # &lt;NavLink>
 
 A special version of the [`<Link>`](Link.md) that will add styling attributes to the rendered element when it matches the current URL.
+`<NavLink>`是  [`<Link>`](Link.md) 的一个特定版本, 会在匹配上当前 URL 的时候会给已经渲染的元素添加样式参数 
 
 ```js
 import { NavLink } from 'react-router-dom'
@@ -11,6 +12,7 @@ import { NavLink } from 'react-router-dom'
 ## activeClassName: string
 
 The class to give the element when it is active. The default given class is `active`. This will be joined with the `className` prop.
+当元素匹配上当前 URL 的时候, 这个类会被赋予给这个元素. 其默认值为 `active`, 这个值会被添加到 `className` 属性的后面(追加)
 
 ```js
 <NavLink
@@ -21,7 +23,7 @@ The class to give the element when it is active. The default given class is `act
 
 ## activeStyle: object
 
-The styles to apply to the element when it is active.
+当元素被选中时, 为此元素添加样式
 
 ```js
 <NavLink
@@ -36,6 +38,7 @@ The styles to apply to the element when it is active.
 ## exact: bool
 
 When `true`, the active class/style will only be applied if the location is matched exactly.
+当值为 `true`时, 
 
 ```js
 <NavLink
@@ -45,6 +48,7 @@ When `true`, the active class/style will only be applied if the location is matc
 ```
 
 ## strict: bool
+
 
 When `true`, the trailing slash on a location's `pathname` will be taken into consideration when determining if the location matches the current URL. See the [`<Route strict>`](../../../react-router/docs/api/Route.md#strict-bool) documentation for more information.
 
