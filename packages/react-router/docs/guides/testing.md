@@ -1,11 +1,15 @@
-# Testing
+# Testing 测试
 
 React Router relies on React context to work. This affects how you can
 test your components that use our components.
 
-## Context
+React Router依赖于React。这会影响你如何通过使用我们的组件来测试你的组件。
+
+## Context 上下文
 
 If you try to unit test one of your components that renders a `<Link>` or a `<Route>`, etc. you'll get some errors and warnings about context.  While you may be tempted to stub out the router context yourself, we recommend you wrap your unit test in a `<StaticRouter>` or a `<MemoryRouter>`. Check it out:
+
+如果你尝试单元测试你渲染的`<Link>`或者`<Router>`组件，你会得到一些上下文的错误和警告信息。虽然你可能会找出自己的路由上下文，我们推荐你将你的单元测试包裹在`<StaticRouter>`或者`<MemoryRouter>`中。来看看:
 
 ```jsx
 class Sidebar extends Component {
@@ -52,12 +56,16 @@ test('it expands when the button is clicked', () => {
 ```
 
 That's all there is to it.
+这就是所有的示例。
 
 ## Starting at specific routes
 
 `<MemoryRouter>` supports the `initialEntries` and `initialIndex` props,
 so you can boot up an app (or any smaller part of an app) at a specific
 location.
+
+## 从特殊的路由开始
+`<MemoryRouter>` 支持 `initialEntries` 和 `initialIndex` 两个属性，因此你可以在一个特定位置启动一个应用（或者应用的任意一小部分）。
 
 ```js
 test('current user is active in sidebar', () => {
@@ -73,6 +81,10 @@ test('current user is active in sidebar', () => {
 ## Navigating
 
 We have a lot of tests that the routes work when the location changes, so you probably don't need to test this stuff. But if you must, since everything happens in render, we do something a little clever like this:
+
+## 导航
+
+当地址变化时我们有许多测试路由的工作，因此你可能不需要测试这个东西。但是如果你必须这样做，一切发生在渲染的时候，我们可以聪明一点这样做：
 
 ```js
 import { render, unmountComponentAtNode } from 'react-dom'
