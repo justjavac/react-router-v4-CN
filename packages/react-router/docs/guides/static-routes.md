@@ -1,7 +1,7 @@
-# Static Routes
+# Static Routes | 静态路由
 
-Previous versions of React Router used static routes to configure your application's routing. This allows for inspection and matching of routes before rendering.  Since v4 moved to dynamic components instead of route configs, some previous use-cases became less obvious and tricky.
+前几个版本的React Router使用静态路由去配置你的应用的路由。这允许在渲染之前对路由进行检查和匹配。自从v4版本用动态组件取缔路由配置，一些以前的用例现在变得不太明显而且比较棘手。
 
-We are developing a package to work with static route configs and React Router, to continue to meet those use-cases. It is under development now but we'd love for you to try it out and help out.
+我们正在开发一个使用静态路由配置和React Router的包，以继续满足这些用例。这个包现在正在开发中，但我们很乐意为您尝试并帮助您。
 
 [React Router Config](https://github.com/reacttraining/react-router/tree/master/packages/react-router-config)
