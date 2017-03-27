@@ -57,15 +57,15 @@ const Branding = () => (
       fontWeight="bold"
       fontSize="90%"
     >
-      <Inline component="a" props={{ href:"https://reacttraining.com" }}>
-        React Training
+      <Inline component="a" props={{ href:"https://reacttraining.com/react-router/" }}>
+        English
       </Inline>
       <Inline> / </Inline>
       <Inline
         component="a"
-        props={{ href: 'https://github.com/ReactTraining/react-router' }}
+        props={{ href: 'https://reacttraining.cn/' }}
         color={LIGHT_GRAY}
-      >React Router</Inline>
+      >简体中文</Inline>
     </Block>
   </Col>
 )
