@@ -13,7 +13,7 @@ import loadSomething from 'bundle-loader?lazy!./Something'
   )}
 </Bundle>
 ```
-If the module is a component, we can render it right there:
+如果模块是一个 component 的话，我们可以像这样渲染这个组件：
 
 ```jsx
 <Bundle load={loadSomething}>
