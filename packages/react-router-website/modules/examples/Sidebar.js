@@ -34,7 +34,7 @@ const SidebarExample = () => (
       }}>
         <ul style={{ listStyleType: 'none', padding: 0 }}>
           <li><Link to="/">主页</Link></li>
-          <li><Link to="/aboout">关于我们</Link></li>
+          <li><Link to="/about">关于我们</Link></li>
           <li><Link to="/contact">联系我们</Link></li>
         </ul>
 
