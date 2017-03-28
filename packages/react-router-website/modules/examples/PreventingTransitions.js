@@ -10,13 +10,13 @@ const PreventingTransitionsExample = () => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/">Form</Link></li>
-        <li><Link to="/one">One</Link></li>
-        <li><Link to="/two">Two</Link></li>
+        <li><Link to="/">表单</Link></li>
+        <li><Link to="/one">页面1</Link></li>
+        <li><Link to="/two">页面2</Link></li>
       </ul>
       <Route path="/" exact component={Form}/>
-      <Route path="/one" render={() => <h3>One</h3>}/>
-      <Route path="/two" render={() => <h3>Two</h3>}/>
+      <Route path="/one" render={() => <h3>页面1</h3>}/>
+      <Route path="/two" render={() => <h3>页面2</h3>}/>
     </div>
   </Router>
 )
@@ -42,18 +42,18 @@ class Form extends React.Component {
         <Prompt
           when={isBlocking}
           message={location => (
-            `Are you sure you want to go to ${location.pathname}`
+            `你真的要跳转到 ${location.pathname}么？`
           )}
         />
 
         <p>
-          Blocking? {isBlocking ? 'Yes, click a link or the back button' : 'Nope'}
+          是否无法跳转? {isBlocking ? '好，现在试试再试试点击那些链接' : '可以正常跳转'}
         </p>
 
         <p>
           <input
             size="50"
-            placeholder="type something to block transitions"
+            placeholder="你这里面输入了以后就不能正常跳转了"
             onChange={event => {
               this.setState({
                 isBlocking: event.target.value.length > 0
@@ -63,7 +63,7 @@ class Form extends React.Component {
         </p>
 
         <p>
-          <button>Submit to stop blocking</button>
+          <button>提交表单以后就可以正常跳转了</button>
         </p>
       </form>
     )

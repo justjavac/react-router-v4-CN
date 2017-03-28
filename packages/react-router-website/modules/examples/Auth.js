@@ -8,18 +8,19 @@ import {
 } from 'react-router-dom'
 
 ////////////////////////////////////////////////////////////
-// 1. Click the public page
-// 2. Click the protected page
-// 3. Log in
-// 4. Click the back button, note the URL each time
+// 流程简介:
+// 1. 点击 "public 页面"
+// 2. 点击 "protected 页面"
+// 3. 登入
+// 4. 点击后退，并且在每一步过程中观察URL的变化
 
 const AuthExample = () => (
   <Router>
     <div>
       <AuthButton/>
       <ul>
-        <li><Link to="/public">Public Page</Link></li>
-        <li><Link to="/protected">Protected Page</Link></li>
+        <li><Link to="/public">Public 页面</Link></li>
+        <li><Link to="/protected">Protected 页面</Link></li>
       </ul>
       <Route path="/public" component={Public}/>
       <Route path="/login" component={Login}/>
@@ -43,12 +44,12 @@ const fakeAuth = {
 const AuthButton = withRouter(({ history }) => (
   fakeAuth.isAuthenticated ? (
     <p>
-      Welcome! <button onClick={() => {
+      欢迎! <button onClick={() => {
         fakeAuth.signout(() => history.push('/'))
-      }}>Sign out</button>
+      }}>登出</button>
     </p>
   ) : (
-    <p>You are not logged in.</p>
+    <p>请先登录</p>
   )
 ))
 
@@ -91,7 +92,7 @@ class Login extends React.Component {
     
     return (
       <div>
-        <p>You must log in to view the page at {from.pathname}</p>
+        <p>若想访问 {from.pathname}, 你需要先登录</p>
         <button onClick={this.login}>Log in</button>
       </div>
     )
