@@ -7,25 +7,26 @@ import {
 } from 'react-router-dom'
 
 
-// 这个例子展示了如何在相同的url下渲染两个不同的页面(或者在不同context下的两个相同页面)。
-// 点击颜色来全屏查看, 然后点击"访问Galary"并且在弹窗里查看其他颜色。注意观察弹窗里面
-// 的URL以及组件和之前是一样的。
+// 这个例子展示了如何在相同的 URL 下渲染两个不同的页面（或者在不同 context 下的两个相同页面）。
+// 点击颜色来全屏查看，然后点击「访问Galary」并且在弹窗里查看其他颜色。注意观察弹窗里面
+// 的 URL 以及组件和之前是一样的。
 
 class ModalSwitch extends React.Component {
 
-  // 把一个位置(location)传给<Switch/>意味着路由会忽略当前的位置，并且使用
-  // 被传入prop的位置(location)。
-  // "location state"属性使用户在弹窗(modal)里面访问路径"/images/2"，而
-  // 不是在主页面上来访问这个路径，而且弹窗页面(modal)会把gallery页面挡住。
-  // 通常, "/images/2"不会匹配到gallery的"/", 而为了使两个页面都能渲染，我
+  // 把一个位置（location）传给 <Switch/> 意味着路由会忽略当前的位置，并且使用
+  // 被传入 prop 的位置（location）。
+  // 「location state」属性使用户在弹窗（modal）里面访问路径「/images/2」，而
+  // 不是在主页面上来访问这个路径，而且弹窗页面（modal）会把 gallery 页面挡住。
+  // 通常，「/images/2」不会匹配到 gallery 的「/」， 而为了使两个页面都能渲染，我
   // 们要保存之前的位置，并且把这个位置传入Switch，然后就算我们已经转到
-  // "/images/2"这个位置了而Switch会以为当前位置还是"/"。
+  // 「/images/2」这个位置了而Switch会以为当前位置还是「/」。
 
   previousLocation = this.props.location
 
   componentWillUpdate(nextProps) {
     const { location } = this.props
-    // 如果props.location不是modal把this.props.location赋值给previousLocation
+    // 如果 props.location 不是 modal 的话，就把 this.props.location 
+    // 赋值给 previousLocation。
     if (
       nextProps.history.action !== 'POP' &&
       (!location.state || !location.state.modal)
@@ -39,7 +40,7 @@ class ModalSwitch extends React.Component {
     const isModal = !!(
       location.state &&
       location.state.modal &&
-      this.previousLocation !== location // 不是首次渲染
+      this.previousLocation !== location // 不是首次渲染。
     )
     return (
       <div>
@@ -78,7 +79,7 @@ const Image = ({ color }) =>
 
 const Home = () => (
   <div>
-    <Link to='/gallery'>访问Galary</Link>
+    <Link to='/gallery'>访问 Galary </Link>
     <h2>精选图片</h2>
     <ul>
       <li><Link to='/img/2'>番茄色</Link></li>
@@ -94,7 +95,7 @@ const Gallery = () => (
         key={i.id}
         to={{
           pathname: `/img/${i.id}`,
-          // 这里是关键！！！！
+          // 这里是关键！
           state: { modal: true }
         }}
       >

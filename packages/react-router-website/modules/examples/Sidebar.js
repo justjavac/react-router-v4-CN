@@ -5,8 +5,8 @@ import {
   Link
 } from 'react-router-dom'
 
-// 每一个逻辑路由都包含两个组件，一个负责显示sidebar另一个则是显示主区域
-// 只要当前的URL匹配，我们希望这两个部分都能被渲染出来
+// 每一个逻辑路由都包含两个组件，一个负责显示 sidebar 另一个则是显示主区域
+// 只要当前的URL匹配，我们希望这两个部分都能被渲染出来。
 
 const routes = [
   { path: '/',
@@ -39,11 +39,10 @@ const SidebarExample = () => (
         </ul>
 
         {routes.map((route, index) => (
-          // You can render a <Route> in as many places
-          // 在一个app里，你可以加入多个<Route>，这些<Route>都能正常渲染，
-          // 只要你的URL是匹配的。也就是说在一个给定的URL下，渲染多个组件(
-          // 例如sidebar或者是breadcrumb)，不管组件是什么，只要放入多个
-          // <Route>组件，就可以被正常渲染出来。
+          // 在一个app里，你可以加入多个 <Route> ，这些 <Route> 都能正常渲染，
+          // 只要你的 URL 是匹配的。也就是说在一个给定的 URL 下，渲染多个组件
+          // （例如 sidebar 或者是 breadcrumb），不管组件是什么，只要放入多个
+          // <Route> 组件，就可以被正常渲染出来。
 
           <Route
             key={index}
@@ -56,10 +55,8 @@ const SidebarExample = () => (
 
       <div style={{ flex: 1, padding: '10px' }}>
         {routes.map((route, index) => (
-          // Render more <Route>s with the same paths as
-          // above, but different components this time.
-          // 像上面这样在一个给定的路径下渲染多个<Route>，而且每个
-          // <Route>的component属性都不相同。
+          // 像上面这样在一个给定的路径下渲染多个 <Route> ，而且每个
+          // <Route> 的 component 属性都不相同。
           <Route
             key={index}
             path={route.path}

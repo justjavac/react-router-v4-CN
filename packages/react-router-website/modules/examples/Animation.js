@@ -7,7 +7,7 @@ import {
   Redirect
 } from 'react-router-dom'
 
-/* 请把以下的css和你其他的css放到一起
+/* 请把以下的 css 代码和你其他的 css 放到一起
 .fade-enter {
   opacity: 0;
   z-index: 1;
@@ -40,9 +40,10 @@ const AnimationExample = () => (
             transitionEnterTimeout={300}
             transitionLeaveTimeout={300}
           >
-            {/* 这里和使用ReactCSSTransitionGroup没有区别，
-                唯一需要注意的是要把你的地址(location)传入
-                "Route"里使它可以在动画切换的时候匹配之前的
+            {/* 
+                这里和使用 ReactCSSTransitionGroup 没有区别，
+                唯一需要注意的是要把你的地址（location）传入
+                「Route」里使它可以在动画切换的时候匹配之前的
                 地址。
             */}
             <Route

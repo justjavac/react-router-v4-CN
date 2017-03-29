@@ -11,12 +11,12 @@ const PreventingTransitionsExample = () => (
     <div>
       <ul>
         <li><Link to="/">表单</Link></li>
-        <li><Link to="/one">页面1</Link></li>
-        <li><Link to="/two">页面2</Link></li>
+        <li><Link to="/one">页面 1</Link></li>
+        <li><Link to="/two">页面 2</Link></li>
       </ul>
       <Route path="/" exact component={Form}/>
-      <Route path="/one" render={() => <h3>页面1</h3>}/>
-      <Route path="/two" render={() => <h3>页面2</h3>}/>
+      <Route path="/one" render={() => <h3>页面 1</h3>}/>
+      <Route path="/two" render={() => <h3>页面 2</h3>}/>
     </div>
   </Router>
 )

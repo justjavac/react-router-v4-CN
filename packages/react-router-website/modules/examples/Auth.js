@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom'
 
 ////////////////////////////////////////////////////////////
-// 流程简介:
-// 1. 点击 "public 页面"
-// 2. 点击 "protected 页面"
+// 流程简介：
+// 1. 点击「public 页面」
+// 2. 点击 「protected 页面」
 // 3. 登入
 // 4. 点击后退，并且在每一步过程中观察URL的变化
 
@@ -19,8 +19,8 @@ const AuthExample = () => (
     <div>
       <AuthButton/>
       <ul>
-        <li><Link to="/public">Public 页面</Link></li>
-        <li><Link to="/protected">Protected 页面</Link></li>
+        <li><Link to="/public">公开页面</Link></li>
+        <li><Link to="/protected">非公开页面</Link></li>
       </ul>
       <Route path="/public" component={Public}/>
       <Route path="/login" component={Login}/>
@@ -33,7 +33,7 @@ const fakeAuth = {
   isAuthenticated: false,
   authenticate(cb) {
     this.isAuthenticated = true
-    setTimeout(cb, 100) // fake async
+    setTimeout(cb, 100) // 模拟异步。
   },
   signout(cb) {
     this.isAuthenticated = false
@@ -66,8 +66,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   )}/>
 )
 
-const Public = () => <h3>Public</h3>
-const Protected = () => <h3>Protected</h3>
+const Public = () => <h3>公开的页面</h3>
+const Protected = () => <h3>非公开的页面</h3>
 
 class Login extends React.Component {
   state = {
@@ -93,7 +93,7 @@ class Login extends React.Component {
     return (
       <div>
         <p>若想访问 {from.pathname}, 你需要先登录</p>
-        <button onClick={this.login}>Log in</button>
+        <button onClick={this.login}>登录</button>
       </div>
     )
   }
