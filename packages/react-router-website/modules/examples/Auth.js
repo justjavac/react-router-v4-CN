@@ -92,7 +92,7 @@ class Login extends React.Component {
     
     return (
       <div>
-        <p>若想访问 {from.pathname}, 你需要先登录</p>
+        <p>若想访问 {from.pathname} ，你需要先登录</p>
         <button onClick={this.login}>登录</button>
       </div>
     )
