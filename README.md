@@ -40,6 +40,12 @@
 | [`react-router-redux`](/packages/react-router-redux) | [![npm](https://img.shields.io/badge/npm-5.0.0alpha.2-orange.svg?style=flat-square)](https://www.npmjs.com/package/react-router-redux) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/react-router-redux/#readme) |  React Router 和 Redux 的集成 |
 | [`react-router-config`](/packages/react-router-config) | [![npm](https://img.shields.io/npm/v/react-router-config.svg?style=flat-square)](https://www.npmjs.com/package/react-router-config) | [![](https://img.shields.io/badge/API%20Docs-readme-orange.svg?style=flat-square)](/packages/react-router-config/#readme) | 静态路由配置帮助助手 |
 
+## 加群交流
+
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=5bb94ead7bfe4f7d766d13702e2178f8f94e1d3941532fcae49c764496d3d919"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="React技术交流群" title="React技术交流群"></a>
+
+QQ群号：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=5bb94ead7bfe4f7d766d13702e2178f8f94e1d3941532fcae49c764496d3d919">342685917</a>
+
 ## 鸣谢
 
 Thanks to [our sponsors](/SPONSORS.md) for supporting the development of React Router.
