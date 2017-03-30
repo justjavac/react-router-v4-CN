@@ -5,22 +5,22 @@ import {
   Link
 } from 'react-router-dom'
 
-// Some folks find value in a centralized route config.
-// A route config is just data. React is great at mapping
-// data into components, and <Route> is a component.
+// 一些程序员喜欢把路由配置集中到一个地方，要知道路由的配置其实只是普通的数据
+// 在把数据映射到组件上这方面，React 非常强大，并且，这里的 <Route> 就是一
+// 个普通的组件。
 
 ////////////////////////////////////////////////////////////
-// first our route components
-const Main = () => <h2>Main</h2>
+// 我们先来定义route相关的组件。
+const Main = () => <h2>主页</h2>
 
-const Sandwiches = () => <h2>Sandwiches</h2>
+const Redbull = () => <h2>红牛</h2>
 
-const Tacos = ({ routes }) => (
+const Snacks = ({ routes }) => (
   <div>
-    <h2>Tacos</h2>
+    <h2>小吃</h2>
     <ul>
-      <li><Link to="/tacos/bus">Bus</Link></li>
-      <li><Link to="/tacos/cart">Cart</Link></li>
+      <li><Link to="/snacks/spicy">辣条</Link></li>
+      <li><Link to="/snacks/chips">薯片</Link></li>
     </ul>
 
     {routes.map((route, i) => (
@@ -29,33 +29,33 @@ const Tacos = ({ routes }) => (
   </div>
 )
 
-const Bus = () => <h3>Bus</h3>
-const Cart = () => <h3>Cart</h3>
+const Spicy = () => <h3>辣条</h3>
+const Chips = () => <h3>薯片</h3>
 
 ////////////////////////////////////////////////////////////
-// then our route config
+// 这里是路由的配置。
 const routes = [
-  { path: '/sandwiches',
-    component: Sandwiches
+  { path: '/redbull',
+    component: Redbull
   },
-  { path: '/tacos',
-    component: Tacos,
+  { path: '/snacks',
+    component: Snacks,
     routes: [
-      { path: '/tacos/bus',
-        component: Bus
+      { path: '/snacks/spicy',
+        component: Spicy
       },
-      { path: '/tacos/cart',
-        component: Cart
+      { path: '/snacks/chips',
+        component: Chips
       }
     ]
   }
 ]
 
-// wrap <Route> and use this everywhere instead, then when
-// sub routes are added to any route it'll work
+// 把 <Route> 组件像这样包一层，然后在需要使用 <Route> 的地方使用 <RouteWithSubRoutes>
+// 自路由可以加到任意路由组件上。
 const RouteWithSubRoutes = (route) => (
   <Route path={route.path} render={props => (
-    // pass the sub-routes down to keep nesting
+    // 把自路由向下传递来达到嵌套。
     <route.component {...props} routes={route.routes}/>
   )}/>
 )
@@ -64,8 +64,8 @@ const RouteConfigExample = () => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/tacos">Tacos</Link></li>
-        <li><Link to="/sandwiches">Sandwiches</Link></li>
+        <li><Link to="/snacks">小吃</Link></li>
+        <li><Link to="/redbull">红牛</Link></li>
       </ul>
 
       {routes.map((route, i) => (

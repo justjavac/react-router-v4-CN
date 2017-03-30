@@ -25,7 +25,7 @@ const Person = ({ match }) => {
 
   return (
     <div>
-      <h3>{person.name}’s Friends</h3>
+      <h3>{person.name} 的朋友</h3>
       <ul>
         {person.friends.map(id => (
           <li key={id}>

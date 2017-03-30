@@ -6,34 +6,27 @@ import {
   Link
 } from 'react-router-dom'
 
-// This example shows how to render two different screens
-// (or the same screen in a different context) at the same url,
-// depending on you got there.
-//
-// Click the colors and see them full screen, then "visit the
-// gallery" and click on the colors. Note the URL and the component
-// are the same as before but now we see them inside a modal
-// on top of the old screen.
+
+// 这个例子展示了如何在相同的 URL 下渲染两个不同的页面（或者在不同 context 下的两个相同页面）。
+// 点击颜色来全屏查看，然后点击「访问Galary」并且在弹窗里查看其他颜色。注意观察弹窗里面
+// 的 URL 以及组件和之前是一样的。
 
 class ModalSwitch extends React.Component {
 
-  // We can pass a location to <Switch/> that will tell it to
-  // ignore the router's current location and use the location
-  // prop instead.
-  //
-  // We can also use "location state" to tell the app the user
-  // wants to go to `/images/2` in a modal, rather than as the
-  // main page, keeping the gallery visible behind it.
-  //
-  // Normally, `/images/2` wouldn't match the gallery at `/`.
-  // So, to get both screens to render, we can save the old
-  // location and pass it to Switch, so it will think the location
-  // is still `/` even though its `/images/2`.
+  // 把一个位置（location）传给 <Switch/> 意味着路由会忽略当前的位置，并且使用
+  // 被传入 prop 的位置（location）。
+  // 「location state」属性使用户在弹窗（modal）里面访问路径「/images/2」，而
+  // 不是在主页面上来访问这个路径，而且弹窗页面（modal）会把 gallery 页面挡住。
+  // 通常，「/images/2」不会匹配到 gallery 的「/」， 而为了使两个页面都能渲染，我
+  // 们要保存之前的位置，并且把这个位置传入Switch，然后就算我们已经转到
+  // 「/images/2」这个位置了而Switch会以为当前位置还是「/」。
+
   previousLocation = this.props.location
 
   componentWillUpdate(nextProps) {
     const { location } = this.props
-    // set previousLocation if props.location is not modal
+    // 如果 props.location 不是 modal 的话，就把 this.props.location 
+    // 赋值给 previousLocation。
     if (
       nextProps.history.action !== 'POP' &&
       (!location.state || !location.state.modal)
@@ -47,7 +40,7 @@ class ModalSwitch extends React.Component {
     const isModal = !!(
       location.state &&
       location.state.modal &&
-      this.previousLocation !== location // not initial render
+      this.previousLocation !== location // 不是首次渲染。
     )
     return (
       <div>
@@ -63,11 +56,11 @@ class ModalSwitch extends React.Component {
 }
 
 const IMAGES = [
-  { id: 0, title: 'Dark Orchid', color: 'DarkOrchid' },
-  { id: 1, title: 'Lime Green', color: 'LimeGreen' },
-  { id: 2, title: 'Tomato', color: 'Tomato' },
-  { id: 3, title: 'Seven Ate Nine', color: '#789' },
-  { id: 4, title: 'Crimson', color: 'Crimson' }
+  { id: 0, title: '深兰花紫', color: 'DarkOrchid' },
+  { id: 1, title: '石灰绿', color: 'LimeGreen' },
+  { id: 2, title: '番茄色', color: 'Tomato' },
+  { id: 3, title: '#七八九', color: '#789' },
+  { id: 4, title: '赤红色', color: 'Crimson' }
 ]
 
 const Thumbnail = ({ color }) =>
@@ -86,11 +79,11 @@ const Image = ({ color }) =>
 
 const Home = () => (
   <div>
-    <Link to='/gallery'>Visit the Gallery</Link>
-    <h2>Featured Images</h2>
+    <Link to='/gallery'>访问 Galary </Link>
+    <h2>精选图片</h2>
     <ul>
-      <li><Link to='/img/2'>Tomato</Link></li>
-      <li><Link to='/img/4'>Crimson</Link></li>
+      <li><Link to='/img/2'>番茄色</Link></li>
+      <li><Link to='/img/4'>赤红色</Link></li>
     </ul>
   </div>
 )
@@ -102,7 +95,7 @@ const Gallery = () => (
         key={i.id}
         to={{
           pathname: `/img/${i.id}`,
-          // this is the trick!
+          // 这里是关键！
           state: { modal: true }
         }}
       >
@@ -116,7 +109,7 @@ const Gallery = () => (
 const ImageView = ({ match }) => {
   const image = IMAGES[parseInt(match.params.id, 10)]
   if (!image) {
-    return <div>Image not found</div>
+    return <div>找不到图片</div>
   }
 
   return (
@@ -160,7 +153,7 @@ const Modal = ({ match, history }) => {
         <h1>{image.title}</h1>
         <Image color={image.color} />
         <button type='button' onClick={back}>
-          Close
+          关闭
         </button>
       </div>
     </div>

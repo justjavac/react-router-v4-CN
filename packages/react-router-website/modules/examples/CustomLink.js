@@ -8,8 +8,8 @@ import {
 const CustomLinkExample = () => (
   <Router>
     <div>
-      <OldSchoolMenuLink activeOnlyWhenExact={true} to="/" label="Home"/>
-      <OldSchoolMenuLink to="/about" label="About"/>
+      <OldSchoolMenuLink activeOnlyWhenExact={true} to="/" label="首页"/>
+      <OldSchoolMenuLink to="/about" label="关于"/>
       <hr/>
       <Route exact path="/" component={Home}/>
       <Route path="/about" component={About}/>
@@ -27,13 +27,13 @@ const OldSchoolMenuLink = ({ label, to, activeOnlyWhenExact }) => (
 
 const Home = () => (
   <div>
-    <h2>Home</h2>
+    <h2>首页</h2>
   </div>
 )
 
 const About = () => (
   <div>
-    <h2>About</h2>
+    <h2>关于</h2>
   </div>
 )
 
