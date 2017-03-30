@@ -5,23 +5,22 @@ import {
   Link
 } from 'react-router-dom'
 
-// Each logical "route" has two components, one for
-// the sidebar and one for the main area. We want to
-// render both of them in different places when the
-// path matches the current URL.
+// 每一个逻辑路由都包含两个组件，一个负责显示 sidebar 另一个则是显示主区域
+// 只要当前的URL匹配，我们希望这两个部分都能被渲染出来。
+
 const routes = [
   { path: '/',
     exact: true,
-    sidebar: () => <div>home!</div>,
-    main: () => <h2>Home</h2>
+    sidebar: () => <div>主页!</div>,
+    main: () => <h2>主页</h2>
   },
-  { path: '/bubblegum',
-    sidebar: () => <div>bubblegum!</div>,
-    main: () => <h2>Bubblegum</h2>
+  { path: '/about',
+    sidebar: () => <div>关于我们!</div>,
+    main: () => <h2>关于我们</h2>
   },
-  { path: '/shoelaces',
-    sidebar: () => <div>shoelaces!</div>,
-    main: () => <h2>Shoelaces</h2>
+  { path: '/contact',
+    sidebar: () => <div>联系我们!</div>,
+    main: () => <h2>联系我们</h2>
   }
 ]
 
@@ -34,19 +33,17 @@ const SidebarExample = () => (
         background: '#f0f0f0'
       }}>
         <ul style={{ listStyleType: 'none', padding: 0 }}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/bubblegum">Bubblegum</Link></li>
-          <li><Link to="/shoelaces">Shoelaces</Link></li>
+          <li><Link to="/">主页</Link></li>
+          <li><Link to="/about">关于我们</Link></li>
+          <li><Link to="/contact">联系我们</Link></li>
         </ul>
 
         {routes.map((route, index) => (
-          // You can render a <Route> in as many places
-          // as you want in your app. It will render along
-          // with any other <Route>s that also match the URL.
-          // So, a sidebar or breadcrumbs or anything else
-          // that requires you to render multiple things
-          // in multiple places at the same URL is nothing
-          // more than multiple <Route>s.
+          // 在一个app里，你可以加入多个 <Route> ，这些 <Route> 都能正常渲染，
+          // 只要你的 URL 是匹配的。也就是说在一个给定的 URL 下，渲染多个组件
+          // （例如 sidebar 或者是 breadcrumb），不管组件是什么，只要放入多个
+          // <Route> 组件，就可以被正常渲染出来。
+
           <Route
             key={index}
             path={route.path}
@@ -58,8 +55,8 @@ const SidebarExample = () => (
 
       <div style={{ flex: 1, padding: '10px' }}>
         {routes.map((route, index) => (
-          // Render more <Route>s with the same paths as
-          // above, but different components this time.
+          // 像上面这样在一个给定的路径下渲染多个 <Route> ，而且每个
+          // <Route> 的 component 属性都不相同。
           <Route
             key={index}
             path={route.path}

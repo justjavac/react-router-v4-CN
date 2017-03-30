@@ -8,10 +8,11 @@ import {
 } from 'react-router-dom'
 
 ////////////////////////////////////////////////////////////
-// 1. Click the public page
-// 2. Click the protected page
-// 3. Log in
-// 4. Click the back button, note the URL each time
+// 流程简介：
+// 1. 点击「public 页面」
+// 2. 点击 「protected 页面」
+// 3. 登入
+// 4. 点击后退，并且在每一步过程中观察URL的变化
 
 const AuthExample = () => (
   <Router>
@@ -32,7 +33,7 @@ const fakeAuth = {
   isAuthenticated: false,
   authenticate(cb) {
     this.isAuthenticated = true
-    setTimeout(cb, 100) // fake async
+    setTimeout(cb, 100) // 模拟异步。
   },
   signout(cb) {
     this.isAuthenticated = false

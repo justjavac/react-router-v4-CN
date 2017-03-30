@@ -17,17 +17,14 @@ const AmbiguousExample = () => (
       </ul>
 
       {/*
-          Sometimes you want to have a whitelist of static paths
-          like "/about" and "/company" but also allow for dynamic
-          patterns like "/:user". The problem is that "/about"
-          is ambiguous and will match both "/about" and "/:user".
-          Most routers have an algorithm to decide for you what
-          it will match since they only allow you to match one
-          "route". React Router lets you match in multiple places
-          on purpose (sidebars, breadcrumbs, etc). So, when you
-          want to clear up any ambiguous matching, and not match
-          "/about" to "/:user", just wrap your <Route>s in a
-          <Switch>. It will render the first one that matches.
+          有时你想要允许类似「/about」和「/company」的这种静态路径，而且同时
+          需要允许类似「/:user」这种对于路径参数的匹配，而问题是「/about」在
+          这里是模糊的，它会同时匹配「/about"和"/:user」。大多数路由系统都有
+          一套自己的算法来决定哪些路径可以匹配哪些不能匹配，从而匹配到一个确
+          定的路由 route 。你可以使用 React Router 在很多不同的地方匹配路
+          径例如：sidebars，breadcrumbs 等等。当你你想匹配「/about」而不想
+          同时也匹配到「/:user」时，你可以使用 <Switch> 来把你的 <Route> 包
+          一层，在 <Switch> 里的第一个匹配对象就会被渲染出来。
       */}
       <Switch>
         <Route path="/about" component={About}/>
