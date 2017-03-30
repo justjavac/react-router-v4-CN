@@ -18,8 +18,8 @@ const AuthExample = () => (
     <div>
       <AuthButton/>
       <ul>
-        <li><Link to="/public">Public Page</Link></li>
-        <li><Link to="/protected">Protected Page</Link></li>
+        <li><Link to="/public">公共页面</Link></li>
+        <li><Link to="/protected">受保护的页面</Link></li>
       </ul>
       <Route path="/public" component={Public}/>
       <Route path="/login" component={Login}/>
@@ -43,12 +43,12 @@ const fakeAuth = {
 const AuthButton = withRouter(({ history }) => (
   fakeAuth.isAuthenticated ? (
     <p>
-      Welcome! <button onClick={() => {
+      欢迎！ <button onClick={() => {
         fakeAuth.signout(() => history.push('/'))
-      }}>Sign out</button>
+      }}>退出</button>
     </p>
   ) : (
-    <p>You are not logged in.</p>
+    <p>你还没有登录。</p>
   )
 ))
 
@@ -65,8 +65,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   )}/>
 )
 
-const Public = () => <h3>Public</h3>
-const Protected = () => <h3>Protected</h3>
+const Public = () => <h3>公共的</h3>
+const Protected = () => <h3>受保护的</h3>
 
 class Login extends React.Component {
   state = {
@@ -91,8 +91,8 @@ class Login extends React.Component {
     
     return (
       <div>
-        <p>You must log in to view the page at {from.pathname}</p>
-        <button onClick={this.login}>Log in</button>
+        <p>你必须登录才能查看页面 {from.pathname}</p>
+        <button onClick={this.login}>登录</button>
       </div>
     )
   }
