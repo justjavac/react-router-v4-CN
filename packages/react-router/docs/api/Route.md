@@ -146,9 +146,9 @@ const ListItemLink = ({ to, ...rest }) => (
 ```
 
 | 路径 | location.pathname | exact | 是否匹配? |
-| --- | --- | --- | --- | --- |
-| `/one`  | `/one/two`  | `true` | 否 |
-| `/one`  | `/one/two`  | `false` | 是 |
+| --- | --- | --- | --- |
+| `/one` | `/one/two` | `true` | 否 |
+| `/one` | `/one/two` | `false` | 是 |
 
 ## strict: bool
 
