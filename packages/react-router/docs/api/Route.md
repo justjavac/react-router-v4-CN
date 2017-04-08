@@ -1,7 +1,6 @@
 # &lt;Route>
 
-想要理解并使用好React Router，最重要的可能就是Route组件了。Route组件主要的作用
-就是当一个[location](./location.md)匹配路由的`path`时，渲染某些UI。
+想要理解并使用好React Router，最重要的可能就是Route组件了。Route组件主要的作用就是当一个[location](./location.md)匹配路由的`path`时，渲染某些UI。
 
 考虑这样的代码：
 
@@ -48,7 +47,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 ## Route props
 
-这三种[渲染方法](#route-render-methods)都会被传到相同的三个props中：
+这三种[渲染方法](#route-render-methods)都会获得相同的三个的属性：
 
 - [match](./match.md)
 - [location](./location.md)
@@ -146,10 +145,10 @@ const ListItemLink = ({ to, ...rest }) => (
 <Route exact path="/one" component={About}/>
 ```
 
-| 路径 | location.pathname | exact | 是否匹配? |   
-|---|---|---|---|---|   
-| `/one`  | `/one/two`  | `true` | 否 |   
-| `/one`  | `/one/two`  | `false` | 是 |   
+| 路径 | location.pathname | exact | 是否匹配? |
+|---|---|---|---|---|
+| `/one`  | `/one/two`  | `true` | 否 |
+| `/one`  | `/one/two`  | `false` | 是 |
 
 ## strict: bool
 
