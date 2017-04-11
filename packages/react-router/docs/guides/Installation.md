@@ -1,6 +1,6 @@
-# Installation
+# Installation | 安装
 
-React Router runs in multiple environments: browsers, servers, native, and even VR (works in the dev preview!) While many components are shared (like `Route`) others are specific to environment (like `NativeRouter`).  Rather than requiring you install two packages, you only have to install the package for the target environment. Any shared components between the environments are re-exported from the environment specific package.
+React Router 运行在可以运行在不同的环境中: 浏览器, 服务端, 源生, 甚至是 VR (运行在开发预览中!) 当许多组件都是共享的(比如 `Route` ) ,但是其它组件都是特定环境(如 `NativeRouter`). 而不是要求您安装两个软件包，您只需要为目标环境安装软件包。 环境之间的任何共享组件都从环境特定的包中重新导出。
 
 ## Web
 
@@ -10,7 +10,7 @@ npm install react-router-dom
 yarn add react-router-dom
 ```
 
-All of the package modules can be imported from the top:
+所有封装模块都可以通过顶部导入:
 
 ```js
 import {
@@ -21,8 +21,7 @@ import {
   // etc.
 } from 'react-router-dom'
 ```
-
-If you're going for a really minimal bundle sizes on the web you can import modules directly. Theoretically a tree-shaking bundler like Webpack makes this unnecessary but we haven't tested it yet. We welcome you to!
+如果您要在网络上实现最小的捆绑包大小，则可以直接导入模块。 理论上，一个像 Webpack 这样令人振奋的捆绑包使得这不必要，但是我们还没有测试过。 我们欢迎你来！
 
 ```js
 import Router from 'react-router-dom/BrowserRouter'
@@ -32,15 +31,15 @@ import Route from 'react-router-dom/Route'
 
 ## Native
 
-We're still working on great documentation for the native capabilities of React Router. For now we recommend you [read the source](https://github.com/ReactTraining/react-router/tree/v4/packages/react-router-native).
+我们仍然在为React Router的本机功能撰写伟大的文档。 现在我们推荐你[阅读源]（https://github.com/ReactTraining/react-router/tree/v4/packages/react-router-native）。
 
 ```bash
 yarn add react-router-native
-# or if not using the react-native cli
+# 或者 如果你不使用 react-native cli
 npm install react-router-native
 ```
 
-All of the package modules can be imported from the top:
+所有封装模块都可以通过顶部导入:
 
 ```js
 import {
@@ -57,11 +56,11 @@ import {
 
 ```bash
 yarn add react-router
-# or if not using the react-native cli
+# 或者 如果你不使用 react-native cli
 npm install react-router
 ```
 
-All of the package modules can be imported from the top:
+所有封装模块都可以通过顶部导入:
 
 ```js
 import {
@@ -71,4 +70,4 @@ import {
 } from 'react-router'
 ```
 
-You can use React Router's navigation anywhere you run React, the navigation state is kept in a memory router. You can look at the implementation of NativeRouter to get an idea on how to integrate.
+您可以在运行React的任何地方使用React Router的导航，导航状态保存在内存路由器中。 您可以查看NativeRouter的实现来了解如何集成。

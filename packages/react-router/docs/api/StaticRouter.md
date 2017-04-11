@@ -3,7 +3,7 @@
 [`<Router>`](Router.md) 从不会改变地址
 
 当用户实际上没有点击时, 这在服务端的渲染场景中可能会非常有用, 所以这个地址从来没有改变.  因此, 称为: static (静态). 当您只需要插入一个位置并在渲染输出上作出断言时，它也可用于简单的测试
-这里有一个简单 node 服务 : 为[`<Redirect>`]（Redirect.md）和其他请求的常规HTML发送302状态代码：
+这里有一个简单 nodejs 服务 : 为[`<Redirect>`]（Redirect.md）和其他请求的常规HTML发送302状态代码：
 
 ```js
 import { createServer } from 'http'
@@ -57,7 +57,6 @@ createServer((req, res) => {
 
 ## location: object
 
-A location object shaped like `{ pathname, search, hash, state }`
 一个格式像 `{ pathname, search, hash, state }` 的地址对象
 
 ```js

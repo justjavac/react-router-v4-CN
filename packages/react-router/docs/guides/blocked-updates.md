@@ -1,12 +1,12 @@
-# Dealing with Update Blocking
+# Dealing with Update Blocking | 更新阻止的处理
 
-React Router has a number of location-aware components that use the current `location` object to determine what they render. By default, the current `location` is passed implicitly to components using React's context model. When the location changes, those components should re-render using the new `location` object from the context.
+React Router有一些位置感知组件，它们使用当前的 "location" 对象来确定它们呈现的内容。 默认情况下，使用React的上下文模型将当前的 `location` 隐式传递给组件。 当位置更改时，这些组件应使用上下文中的新 `location` 对象重新渲染。
 
-React provides two approaches to optimize the rendering performance of applications: the `shouldComponentUpdate` lifecycle method and the `PureComponent`. Both block the re-rendering of components unless the right conditions are met. Unfortunately, this means that React Router's location-aware components can become out of sync with the current location if their re-rendering was prevented.
+React提供了两种方法来优化应用程序的渲染性能："shouldComponentUpdate" 生命周期方法和 "PureComponent"。 两者都阻止重新渲染组件，除非满足正确的条件。 不幸的是，这意味着如果React Router的重新呈现被阻止，React Router的位置感知组件可能与当前位置不同步。
 
-### Example of the Problem
+### 示例
 
-When the `<UpdateBlocker>` is mounting, any location-aware child components will use the current `location` and `match` objects to render.
+当 `<UpdateBlocker>` 正在安装时，任何位置感知的子组件将使用当前的 "location" 和 "match" 对象进行渲染。
 
 ```js
 // location = { pathname: '/about' }
@@ -18,12 +18,12 @@ When the `<UpdateBlocker>` is mounting, any location-aware child components will
 </UpdateBlocker>
 ```
 
-When the location changes, the `<UpdateBlocker>`'s `shouldComponentUpdate` method will return `false`, and its child components will not be re-rendered.
+当位置改变时，`<UpdateBlocker>```shouldComponentUpdate` 方法将返回 `false`，其子组件将不被重新呈现。
 
 ```js
 // location = { pathname: '/faq' }
 <UpdateBlocker>
-  // the links will not re-render, so they retain their previous attributes
+  // 链接不会重新呈现，所以它们保留了之前的属性
   <NavLink to='/about'>About</NavLink>
   // <a href='/about' class='active'>About</a>
   <NavLink to='/faq'>F.A.Q.</NavLink>
@@ -33,13 +33,13 @@ When the location changes, the `<UpdateBlocker>`'s `shouldComponentUpdate` metho
 
 ### `shouldComponentUpdate`
 
-In order for a component that implements `shouldComponentUpdate` to know that it _should_ update when the location changes, its `shouldComponentUpdate` method needs to be able to detect location changes.
+为了使实现 `shouldComponentUpdate`的组件知道位置更改时_should_更新，它的 `shouldComponentUpdate` 方法需要能够检测位置更改。
 
-If you are implementing `shouldComponentUpdate` yourself, you _could_ compare the location from the current and next `context.router` objects. However, as a user, you should not have to use context directly. Instead, it would be ideal if you could compare the current and next `location` without touching the context.
+如果您自己实现 `shouldComponentUpdate`，你可以_could_比较当前和下一个 `context.router` 对象的位置。 但是，作为用户，您不必直接使用上下文。 相反，如果您可以比较当前和下一个“位置”而不触及上下文，这将是理想的。
 
 #### Third-Party Code
 
-You may run into issues with components not updating after a location change despite not calling `shouldComponentUpdate` yourself. This is most likely because `shouldComponentUpdate` is being called by third-party code, such as `react-redux`'s `connect` and `mobx-react`'s `observer`.
+问题。 这很可能是因为`shouldComponentUpdate`被第三方代码调用，比如`react-redux` 的 `connect` 和 `mobx-react` 的 `observer`.
 
 ```js
 // react-redux
@@ -59,6 +59,7 @@ React's `PureComponent` does not implement `shouldComponentUpdate`, but it takes
 
 ### The Solution
 
+避免在位置更改后阻止重新呈现的关键是将阻止组件的 "location" 对象作为支柱传递。 每当位置发生变化时，这将是不同的，因此将检测和比较当前位置和下一个位置是否不同。
 The key to avoiding blocked re-renders after location changes is to pass the blocking component the `location` object as a prop. This will be different whenever the location changes, so comparisons will detect that the current and next location are different.
 
 ```js
