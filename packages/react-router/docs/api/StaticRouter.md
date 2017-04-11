@@ -1,10 +1,9 @@
 # &lt;StaticRouter>
 
-A [`<Router>`](Router.md) that never changes location.
+[`<Router>`](Router.md) 从不会改变地址
 
-This can be useful in server-side rendering scenarios when the user isn't actually clicking around, so the location never actually changes. Hence, the name: static. It's also useful in simple tests when you just need to plug in a location and make assertions on the render output.
-
-Here's an example node server that sends a 302 status code for [`<Redirect>`](Redirect.md)s and regular HTML for other requests:
+当用户实际上没有点击时, 这在服务端的渲染场景中可能会非常有用, 所以这个地址从来没有改变.  因此, 称为: static (静态). 当您只需要插入一个位置并在渲染输出上作出断言时，它也可用于简单的测试
+这里有一个简单 node 服务 : 为[`<Redirect>`]（Redirect.md）和其他请求的常规HTML发送302状态代码：
 
 ```js
 import { createServer } from 'http'
@@ -38,7 +37,7 @@ createServer((req, res) => {
 
 ## basename: string
 
-The base URL for all locations. A properly formatted basename should have a leading slash, but no trailing slash.
+所有地址的基本 URL . 正确格式化的基本名称应该有一个主要的斜杠，但没有尾部斜杠
 
 ```js
 <StaticRouter basename="/calendar">
@@ -48,7 +47,7 @@ The base URL for all locations. A properly formatted basename should have a lead
 
 ## location: string
 
-The URL the server received, probably `req.url` on a node server.
+服务器收到的 URL, 在 node 服务上可能是 `req.url`
 
 ```js
 <StaticRouter location={req.url}>
@@ -59,6 +58,7 @@ The URL the server received, probably `req.url` on a node server.
 ## location: object
 
 A location object shaped like `{ pathname, search, hash, state }`
+一个格式像 `{ pathname, search, hash, state }` 的地址对象
 
 ```js
 <StaticRouter location={{ pathname: '/bubblegum' }}>
@@ -68,8 +68,8 @@ A location object shaped like `{ pathname, search, hash, state }`
 
 ## context: object
 
-A plain JavaScript object that records the results of the render. See the example above.
+记录渲染结果的纯JavaScript对象。 见上面的例子
 
 ## children: node
 
-A [single child element](https://facebook.github.io/react/docs/react-api.html#react.children.only) to render.
+要呈现的 [单个子元素](https://facebook.github.io/react/docs/react-api.html#react.children.only)。
