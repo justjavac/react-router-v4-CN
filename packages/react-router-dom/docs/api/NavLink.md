@@ -37,8 +37,7 @@ The class to give the element when it is active. The default given class is `act
 
 ## exact: bool
 
-When `true`, the active class/style will only be applied if the location is matched exactly.
-当值为 `true`时, 
+当值为 `true` 时, 只有当地址完全匹配 class 和 style 才会应用
 
 ```js
 <NavLink
@@ -49,8 +48,7 @@ When `true`, the active class/style will only be applied if the location is matc
 
 ## strict: bool
 
-
-When `true`, the trailing slash on a location's `pathname` will be taken into consideration when determining if the location matches the current URL. See the [`<Route strict>`](../../../react-router/docs/api/Route.md#strict-bool) documentation for more information.
+当值为 `true` 时，在确定位置是否与当前 URL 匹配时，将考虑位置 `pathname` 后的斜线 有关详细信息，请参阅[`<Route strict>`]（../../../ react-router / docs / api / Route.md＃strict-bool）文档。
 
 ```js
 <NavLink
@@ -61,7 +59,7 @@ When `true`, the trailing slash on a location's `pathname` will be taken into co
 
 ## isActive: func
 
-A function to add extra logic for determining whether the link is active. This should be used if you want to do more than verify that the link's pathname matches the current URL's `pathname`.
+添加用于确定链接是否活动的额外逻辑的功能。 如果您想要做的更多，请验证链接的路径名是否与当前URL的 `pathname` 匹配。
 
 ```js
 // only consider an event active if its event id is an odd number
