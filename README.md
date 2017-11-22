@@ -42,9 +42,11 @@
 
 ## 加群交流
 
-<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=5bb94ead7bfe4f7d766d13702e2178f8f94e1d3941532fcae49c764496d3d919"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="React技术交流群" title="React技术交流群"></a>
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=5bb94ead7bfe4f7d766d13702e2178f8f94e1d3941532fcae49c764496d3d919"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="React技术交流1群" title="React技术交流1群"></a>
 
-QQ群号：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=5bb94ead7bfe4f7d766d13702e2178f8f94e1d3941532fcae49c764496d3d919">342685917</a>
+React技术交流1群（已满）：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=5bb94ead7bfe4f7d766d13702e2178f8f94e1d3941532fcae49c764496d3d919">342685917</a>
+
+React技术交流2群：<a target="_blank" href="https://jq.qq.com/?_wv=1027&k=5Ky6MAA">450586076</a>
 
 ## 鸣谢
 
