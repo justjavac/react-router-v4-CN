@@ -26,7 +26,6 @@
     "react-router": "^4"
   },
   "devDependencies": {
-    "react-router": "^4.0.0",
     "babel-cli": "^6.18.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.10",
@@ -53,9 +52,10 @@
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.3.0",
+    "react-router": "^4.0.0",
     "readline-sync": "^1.4.4",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^3.1.14"
   },
   "browserify": {
     "transform": [
